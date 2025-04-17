@@ -1,4 +1,4 @@
-<?php session_start(); include 'db_connect.php'; ?>
+<?php session_start(); include 'conn_connect.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

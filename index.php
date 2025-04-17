@@ -1,4 +1,17 @@
-<?php session_start(); include 'db_connect.php'; ?>
+<?php session_start(); include  'db_connect.php';
+
+
+
+// Check if the user is logged in as a user
+if ($_SESSION['role'] !== 'user') {
+    header("Location: ../auth/login.php");
+    exit();
+}
+
+echo "Welcome, " . $_SESSION['username'];
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,10 +21,31 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Luxury Abayas</h1>
-        <a href="checkout.php" class="cart-link">Cart (<?php echo isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0; ?>)</a>
-    </header>
+<header>
+    <h1>Luxury Abayas</h1>
+    
+    <!-- Cart Link -->
+    <a href="checkout.php" class="cart-link">
+        Cart (<?php echo isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0; ?>)
+    </a>
+    
+    <!-- Categories (You can adjust the category links as per your requirement) -->
+    <nav>
+        <ul>
+            <li><a href="category.php?category=abayas">Abayas</a></li>
+            <li><a href="category.php?category=dresses">Dresses</a></li>
+            <li><a href="category.php?category=accessories">Accessories</a></li>
+            <li><a href="category.php?category=sale">Sale</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Logout Link (Only if the user is logged in) -->
+    <?php if (isset($_SESSION['username'])): ?>
+        <a href="../auth/logout.php" class="logout-link">Logout</a>
+    <?php else: ?>
+        <a href="login.php" class="login-link">Login</a>
+    <?php endif; ?>
+</header>
 
     <div class="product-grid">
         <?php

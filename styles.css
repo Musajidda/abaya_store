@@ -205,3 +205,84 @@ button:hover {
 .thank-you a:hover {
     background-color: #444;
 }
+
+
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+header h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+/* Cart Link */
+.cart-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin-right: 20px;
+}
+
+.cart-link:hover {
+    text-decoration: underline;
+}
+
+/* Navigation (Categories) */
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Logout/Login Link */
+.logout-link, .login-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    margin-left: 20px;
+}
+
+.logout-link:hover, .login-link:hover {
+    text-decoration: underline;
+}
+
+/* Make the header responsive */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 15px;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+}

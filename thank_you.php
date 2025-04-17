@@ -1,4 +1,4 @@
-<?php include 'db_connect.php'; ?>
+<?php include require_once 'conn_connect.php';?>
 <!DOCTYPE html>
 <html>
 <head>
