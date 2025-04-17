@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="auth-right">
             <div class="auth-card">
                 <div class="auth-header">
-                    <h2><i class="fas fa-sign-in-alt"></i> Login</h2>
+                    <h2><i class="fas fa-sign-in-alt"></i> Login - Admin</h2>
                 </div>
 
                 <?php if ($error): ?>
@@ -83,9 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </form>
                 </div>
                 
-                <div class="auth-footer">
-                    <p>Don't have an account? <a href="register.php">Register here</a></p>
-                </div>
+               
             </div>
         </div>
     </div>
