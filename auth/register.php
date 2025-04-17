@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = trim($_POST['username']);
     $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
     $password = $_POST['password'];
-    $role = $_POST['role']; // Getting the role from the form
+    $role = 'user'; // Getting the role from the form
 
     // Validate inputs
     if (empty($username) || empty($email) || empty($password)) {
@@ -93,13 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         </div>
                         
                         <!-- Add a role selection field -->
-                        <div class="form-group">
-                            <label for="role"><i class="fas fa-user-tag"></i> Role</label>
-                            <select id="role" name="role" class="form-control">
-                                <option value="user" selected>User</option>
-                                <option value="admin">Admin</option>
-                            </select>
-                        </div>
+                       
 
                         <button type="submit" class="btn-auth">Register</button>
                     </form>

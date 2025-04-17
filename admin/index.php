@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $error = "Invalid email format.";
     } else {
-        $sql = "SELECT id, username, email, password, role FROM users WHERE email = ? AND role = 'user'";
+        $sql = "SELECT id, username, email, password, role FROM users WHERE email = ? AND role = 'admin'";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("s", $email);
         $stmt->execute();
@@ -27,24 +27,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['email'] = $emailconn;
             $_SESSION['role'] = $role;
 
-            header("Location: ../index.php");
+            header("Location: ../admin/dashboard.php");
             exit();
         } else {
-            $error = "Invalid user credentials.";
+            $error = "Invalid admin credentials.";
         }
     }
 }
 ?>
-
-<!-- Use the same HTML but change title to "User Login" and heading texts -->
-
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Abaya Store</title>
+    <title>Admin Login | Abaya Store</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/auth.css">
 </head>
