@@ -1,10 +1,25 @@
-<?php session_start(); include 'conn_connect.php'; ?>
+<?php session_start(); include 'db_connect.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Checkout</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        button.remove-btn {
+    background-color: #e3342f;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button.remove-btn:hover {
+    background-color: #cc1f1a;
+}
+
+    </style>
 </head>
 <body>
     <header>
@@ -27,6 +42,11 @@
                     <h3><?php echo $product['name']; ?></h3>
                     <p>Quantity: <?php echo $quantity; ?></p>
                     <p>Subtotal: ₦<?php echo number_format($subtotal, 2); ?></p>
+
+                    <form action="remove_from_cart.php" method="post" style="margin-top: 10px;">
+        <input type="hidden" name="product_id" value="<?php echo $product_id; ?>">
+        <button type="submit" style="background-color: red; color: white; padding: 5px 10px; border: none; border-radius: 5px;">Remove</button>
+    </form>
                 </div>
                 <?php endforeach; ?>
                 <div class="total">

@@ -28,16 +28,7 @@ echo "Welcome, " . $_SESSION['username'];
     <a href="checkout.php" class="cart-link">
         Cart (<?php echo isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0; ?>)
     </a>
-    
-    <!-- Categories (You can adjust the category links as per your requirement) -->
-    <nav>
-        <ul>
-            <li><a href="category.php?category=abayas">Abayas</a></li>
-            <li><a href="category.php?category=dresses">Dresses</a></li>
-            <li><a href="category.php?category=accessories">Accessories</a></li>
-            <li><a href="category.php?category=sale">Sale</a></li>
-        </ul>
-    </nav>
+
     
     <!-- Logout Link (Only if the user is logged in) -->
     <?php if (isset($_SESSION['username'])): ?>
@@ -67,7 +58,7 @@ echo "Welcome, " . $_SESSION['username'];
     </div>
 
     <footer>
-        <p>&copy; 2023 Abaya Shop. All rights reserved.</p>
+        <p>&copy; 2025 Abaya Shop. All rights reserved.</p>
     </footer>
 </body>
 </html>
